@@ -1,0 +1,105 @@
+package clery.kingnetconservator.app.kingnetconservator.Control.Net;
+
+import android.accounts.NetworkErrorException;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.support.annotation.Nullable;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+/**
+ * Created by clery on 2017/2/18.
+ */
+
+public class NetUtils {
+    private static final int BUFFER_SIZE = 1024;
+
+    public static void doJsonDowland(String url, String method, @Nullable String content, Handler handler, int Type){
+        HttpURLConnection conn = null;
+        try {
+            // 创建一个URL对象
+            URL mURL = new URL(url);
+            // 调用URL的openConnection()方法,获取HttpURLConnection对象
+            conn = (HttpURLConnection) mURL.openConnection();
+
+            conn.setReadTimeout(0); //禁用Timeout
+            conn.setConnectTimeout(0); //禁用Timeout
+            conn.setDoInput(true);
+            conn.setRequestMethod(method);
+
+            if(content!=null){
+                conn.setDoOutput(true);// 设置此方法,允许向服务器输出内容
+                conn.setRequestProperty("Content-Type","application/json");
+                // post请求的参数
+                String data = content;
+                // 获得一个输出流,向服务器写数据,默认情况下,系统不允许向服务器输出内容
+                OutputStream out = conn.getOutputStream();// 获得一个输出流,向服务器写数据
+                out.write(data.getBytes());
+                out.flush();
+                out.close();
+            }
+
+            conn.connect();
+
+            int responseCode = conn.getResponseCode();// 调用此方法就不必再使用conn.connect()方法
+            if (responseCode == 200) {
+
+                InputStream is = conn.getInputStream();
+                String response = getStringFromInputStream(is);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("response", response);
+
+                Message message = new Message();
+                message.what = Type;
+                message.setData(bundle);
+                handler.sendMessage(message);
+
+            } else {
+                throw new NetworkErrorException("response status is "+responseCode);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.disconnect();// 关闭连接
+            }
+        }
+
+    }
+
+    private static String getStringFromInputStream(InputStream is)
+            throws IOException {
+        ByteArrayOutputStream os = new ByteArrayOutputStream();
+        // 模板代码 必须熟练
+        byte[] buffer = new byte[BUFFER_SIZE];
+        int len = -1;
+        while ((len = is.read(buffer)) != -1) {
+            os.write(buffer, 0, len);
+        }
+        is.close();
+        String state = os.toString();// 把流中的数据转换成字符串,采用的编码是utf-8(模拟器默认编码)
+        os.close();
+        return state;
+    }
+
+    public static Boolean isConnected(Context context){
+
+        ConnectivityManager cm = (ConnectivityManager)context.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = cm.getActiveNetworkInfo();
+        if (networkInfo != null && networkInfo.isConnected()) {
+            return true;
+        }
+        return false;
+    }
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://ift.tt/nIICcg">
+    <!-- checked -->
+    <item android:state_checked="true" android:drawable="@color/colorblack">
+    </item>
+    <item android:state_checked="false" android:drawable="@color/colorwrite">
+    </item>
+</selector>

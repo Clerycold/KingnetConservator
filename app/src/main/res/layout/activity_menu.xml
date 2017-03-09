@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <clery.kingnetconservator.app.kingnetconservator.Control.UIpattern.Titledesign
+        android:id="@+id/menu_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow"/>
+
+    <TextView
+        android:id="@+id/internetText"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/internetEx"
+        android:layout_alignBottom="@+id/internetText"
+        android:layout_toLeftOf="@+id/internetText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="網路連線狀況："/>
+
+    <Button
+        android:id="@+id/packagemenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:background="@drawable/bg_box_black"/>
+
+    <Button
+        android:id="@+id/okpackmenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:background="@drawable/bg_box_black"/>
+
+    <Button
+        android:id="@+id/tourmenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:background="@drawable/bg_box_black"/>
+
+    <Button
+        android:id="@+id/patrolmenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:background="@drawable/bg_box_black"/>
+
+    <Button
+        android:id="@+id/textmenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:background="@drawable/bg_box_black"/>
+
+</RelativeLayout>

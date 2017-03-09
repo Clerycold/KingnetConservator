@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="clery.kingnetconservator.app.kingnetconservator.LoginActivity.view.MainActivity">
+
+    <TextView
+        android:id="@+id/logintitle"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="28dp"
+        android:paddingBottom="28dp"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:shadowColor="@android:color/black"
+        android:shadowRadius="10"
+        android:shadowDx="5"
+        android:shadowDy="5"/>
+
+    <clery.kingnetconservator.app.kingnetconservator.Control.UIpattern.EditAnimation
+        android:id="@+id/editaccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <clery.kingnetconservator.app.kingnetconservator.Control.UIpattern.EditAnimation
+        android:id="@+id/editpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <CheckBox
+        android:id="@+id/displaybox"
+        android:layout_toRightOf="@+id/rememberbox"
+        android:layout_alignBottom="@+id/rememberbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <CheckBox
+        android:id="@+id/rememberbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <clery.kingnetconservator.app.kingnetconservator.Control.UIpattern.EditAnimation
+        android:id="@+id/editCodes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/loginbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_box_black"
+        android:text="登入"/>
+
+    <Button
+        android:id="@+id/screenbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_box_black"
+        android:text="掃描驗證碼"/>
+
+</RelativeLayout>

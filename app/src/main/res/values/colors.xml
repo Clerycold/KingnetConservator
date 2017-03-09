@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#000000</color>
+
+    <color name="colorgray">#F1F1F3</color>
+    <color name="colorblack">#000000</color>
+    <color name="colorwrite">#ffffff</color>
+    <color name="colorMainlight">#3970A9</color>
+    <color name="colorHometext">#446B88</color>
+    <color name="colorBluewater">#3C8EE0</color>
+    <color name="color_accent">#2196F3</color>
+    <color name="colorNavybule">#094368</color>
+    <color name="colorGraylight">#666666</color>
+    <color name="colorGrayDark">#708090</color>
+    <color name="colorGreenlight">#00ff00</color>
+    <color name="colororange">#FDF5E1</color>
+
+    <color name="colorRed">#FF0000</color>
+    <color name="colorOrange">#FF5511</color>
+    <color name="colorYellow">#FFFF00</color>
+    <color name="colorGreen">#00FF00</color>
+    <color name="colorBlue">#0000FF</color>
+    <color name="colorIndigo">#7700FF</color>
+    <color name="colorPurple">#9900FF</color>
+</resources>

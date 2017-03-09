@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <clery.kingnetconservator.app.kingnetconservator.Control.UIpattern.Titledesign
+        android:id="@+id/okpack_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow"/>
+
+    <clery.kingnetconservator.app.kingnetconservator.Control.UIpattern.HorizontalProgressBarWithNumber
+        android:id="@+id/id_progressbar"
+        android:layout_below="@+id/okpack_title"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <clery.kingnetconservator.app.kingnetconservator.Control.UIpattern.Backbutton
+        android:id="@+id/backbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/internetEx"
+        android:layout_toRightOf="@+id/finsh_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="網路連線狀況："/>
+
+    <TextView
+        android:id="@+id/internetText"
+        android:layout_toRightOf="@+id/internetEx"
+        android:layout_marginRight="12dp"
+        android:layout_alignBottom="@+id/internetEx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/finsh_count"
+        android:layout_above="@+id/internetEx"
+        android:layout_toRightOf="@+id/finsh_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <ListView
+        android:id="@+id/okpacklist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:divider = "@android:color/white"/>
+
+    <TextView
+        android:id="@+id/oklistEmptyView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"/>
+
+    <Button
+        android:id="@+id/finsh_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:background="@drawable/bg_box_black"
+        />
+
+</RelativeLayout>

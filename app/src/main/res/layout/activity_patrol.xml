@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/patrol_rel">
+
+    <clery.kingnetconservator.app.kingnetconservator.Control.UIpattern.Titledesign
+        android:id="@+id/packagetitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shadow"/>
+
+    <clery.kingnetconservator.app.kingnetconservator.Control.UIpattern.Backbutton
+        android:id="@+id/backbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/patrolbtnfinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:background="@drawable/bg_box_black"/>
+
+    <TextView
+        android:id="@+id/patrolcount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/patrolbtnfinish"
+        android:layout_marginBottom="24dp"
+        android:layout_alignParentBottom="true"/>
+
+
+</RelativeLayout>
