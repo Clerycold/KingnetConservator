@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 
 import java.lang.ref.WeakReference;
 
@@ -47,7 +48,10 @@ public class WeakHandler extends Handler{
             switch (msg.what){
                 case 0:
 
+
                     Bundle bundle = msg.getData();
+
+                    Log.d("--showInternetStatus", bundle.getString("response"));
                     showInternetStatus.JsonDataArrange(bundle.getString("response"));
 
                     break;

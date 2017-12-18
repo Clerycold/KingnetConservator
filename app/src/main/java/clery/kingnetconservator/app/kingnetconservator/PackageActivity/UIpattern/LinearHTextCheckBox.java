@@ -18,13 +18,14 @@ import clery.kingnetconservator.app.kingnetconservator.Control.ScreenWH;
  * Created by clery on 2017/2/18.
  */
 
-public class LinearHTextCheckBox extends RelativeLayout{
+public class LinearHTextCheckBox extends RelativeLayout {
 
     private static final AtomicInteger sNextGeneratedId = new AtomicInteger(1);
 
     Context context;
 
     TextView table_note;
+
     CheckBox checkBox;
 
     public LinearHTextCheckBox(Context context) {
@@ -38,11 +39,13 @@ public class LinearHTextCheckBox extends RelativeLayout{
     }
 
     private void initView() {
+
         table_note = new TextView(context);
         table_note.setId(generateViewId());
         checkBox = new CheckBox(context);
     }
-    private void xmlArrange(){
+
+    private void xmlArrange() {
 
         RelativeLayout.LayoutParams table_note_lay = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);

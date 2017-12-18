@@ -38,6 +38,7 @@ public class CameraCheck {
                 defaultId = i;
             }
         }
+
         if (-1 == defaultId) {
             if (mNumberOfCameras > 0) {
                 // 如果没有后向摄像头
@@ -49,7 +50,6 @@ public class CameraCheck {
         }
         return defaultId;
     }
-
     //判斷是否可寫入
     public static Boolean isExternalStorageWritable(){
         String state = Environment.getExternalStorageState();
@@ -58,6 +58,4 @@ public class CameraCheck {
         }
         return false;
     }
-
-
 }

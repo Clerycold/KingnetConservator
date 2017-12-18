@@ -16,6 +16,7 @@ import java.util.List;
  */
 
 public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
+
     private SurfaceHolder mHolder;
     private Camera mCamera;
     private Camera.PreviewCallback previewCallback;
@@ -88,6 +89,7 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
             }
 
             Camera.Parameters myParameters = mCamera.getParameters();
+
             if(mPreviewSize != null) {
                 myParameters.setPreviewSize(mPreviewSize.width, mPreviewSize.height);
                 mCamera.setParameters(myParameters);
@@ -97,6 +99,7 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
             mCamera.setPreviewCallback(previewCallback);
             mCamera.startPreview();
             mCamera.autoFocus(autoFocusCallback);
+
         } catch (Exception e) {
             Log.d("DBG", "Error starting camera preview: " + e.getMessage());
         }
@@ -104,12 +107,12 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
+
         if(mCamera!=null){
             mCamera.release();//釋放相機資源
             mCamera = null;
         }
     }
-
     /**
      * 解析手機支援的寬高比對最適合的大小
      * @param sizes
@@ -137,6 +140,7 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
                 minDiff = Math.abs(size.height - targetHeight);
             }
         }
+
         if (optimalSize == null) {
             minDiff = Double.MAX_VALUE;
             for (Camera.Size size : sizes) {
@@ -148,7 +152,6 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
         }
         return optimalSize;
     }
-
     /**
      * 設定鏡頭不失真畫面
      * @param widthMeasureSpec
@@ -168,5 +171,4 @@ public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback
             mPreviewSize = getOptimalPreviewSize(mSupportedPreviewSizes, width, height);
         }
     }
-
 }

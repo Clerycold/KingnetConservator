@@ -36,7 +36,7 @@ import clery.kingnetconservator.app.kingnetconservator.R;
  * Created by clery on 2017/3/2.
  */
 
-public class PatrolPictureActivity extends Activity{
+public class PatrolPictureActivity extends Activity {
 
     private static String TAG = "PatrolPictureActivity";
 
@@ -71,8 +71,6 @@ public class PatrolPictureActivity extends Activity{
      * 暫存拍照後的bitmap檔
      */
     private Bitmap temppicture;
-
-    Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -183,7 +181,7 @@ public class PatrolPictureActivity extends Activity{
         public void onPictureTaken(byte[] data, Camera camera) {
             if (data != null) {
                 temppicture = BitmapUtils.decodeSampledBitmapData(data,ScreenWH.getScreenHidth(),ScreenWH.getScreenWidth());
-                temppicture=new BitmapRotation().bitmapRotation(temppicture,orientationDetector.getORIENTATION(),CURRENTCAMERAID);
+                temppicture = new BitmapRotation().bitmapRotation(temppicture,orientationDetector.getORIENTATION(),CURRENTCAMERAID);
 
                 Bitmap icon = BitmapUtils.decodeSampledBitmapFromResource(getResources(),R.drawable.logo,ScreenWH.getScreenWidth(),ScreenWH.getScreenWidth());
 
@@ -246,7 +244,7 @@ public class PatrolPictureActivity extends Activity{
     protected void onStart() {
         super.onStart();
 
-        if(ENMERGENCE &&mCamera==null){
+        if(ENMERGENCE && mCamera == null){
             mCamera = getCameraInstance();
             mPreview = new CameraPreview(this, mCamera);
             frameLayoutPreview.addView(mPreview);
@@ -257,6 +255,7 @@ public class PatrolPictureActivity extends Activity{
     @Override
     protected void onPause() {
         super.onPause();
+
         frameLayoutPreview.removeView(mPreview);
         mCamera = null;
         mPreview = null;

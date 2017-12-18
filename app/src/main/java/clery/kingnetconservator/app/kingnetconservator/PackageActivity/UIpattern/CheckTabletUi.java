@@ -99,6 +99,7 @@ public class CheckTabletUi extends ScrollView{
         }
     }
     public int[] CheckBoxSelected(){
+
         int[] checkBoxSelected = new int[linearHTextCheckArray.size()];
 
         for(int i=0,j=linearHTextCheckArray.size();i<j;i++){

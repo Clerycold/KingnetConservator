@@ -40,7 +40,6 @@ import static android.graphics.Bitmap.createBitmap;
 
 public class DrawView extends View {
 
-    private File pictureFile;
     // 点击的坐标
     private float lastX = 0, lastY = 0;
     private Path path;

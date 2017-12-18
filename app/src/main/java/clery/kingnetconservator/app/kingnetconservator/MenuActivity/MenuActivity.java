@@ -52,6 +52,7 @@ import clery.kingnetconservator.app.kingnetconservator.TourActivity.TourActivity
 public class MenuActivity extends Activity implements Runnable,ShowInternetStatus{
 
     private String TAG = "MenuActivity";
+
     int PERMISSION_WRITE ;
 
     int PERMISSION_CAMERA ;
@@ -160,6 +161,7 @@ public class MenuActivity extends Activity implements Runnable,ShowInternetStatu
         textmenu_lay.addRule(RelativeLayout.CENTER_HORIZONTAL);
         textmenu_lay.setMargins(0,ScreenWH.getUISpacingY()*2,0,0);
         textmenu.setLayoutParams(textmenu_lay);
+
     }
 
     private void setData() {
@@ -277,6 +279,7 @@ public class MenuActivity extends Activity implements Runnable,ShowInternetStatu
             return true;
         }
     };
+
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);

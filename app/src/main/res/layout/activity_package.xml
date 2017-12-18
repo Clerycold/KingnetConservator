@@ -24,6 +24,4 @@
         android:divider = "@android:color/white"
         />
 
-
-
 </RelativeLayout>
